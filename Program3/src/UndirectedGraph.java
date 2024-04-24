@@ -114,4 +114,25 @@ public class UndirectedGraph {
 	public HashMap<String, LinkedList<Edge>> getAdjList() {
 		return adjList;
 	}
+
+	public int getNumVertices() {
+		return adjList.size();
+	}
+
+	public LinkedList<Edge> getAdjacencyEdges(String vertex) {
+		return adjList.get(vertex);
+	}
+	
+	//This will be used in our custom method
+	public String numToAct(int number) {
+        int b = 0;
+        String ret = "";
+        for (Edge ele : edges) { 
+            if(b == number) {
+                ret = ele.getFrom();
+            }
+            b++;
+        }
+        return ret;
+    }
 }
